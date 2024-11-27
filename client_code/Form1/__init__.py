@@ -15,4 +15,9 @@ class Form1(Form1Template):
 
   def submit_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
+    name = self.text_box_1.text
+    email = self.text_box_2.text
+    feedback = self.text_box_3.text
+    anvil.server.call('add_feedack', name, email, feedback)
+    #    alert('You clicked a submit button')
+    Notification('Feedback Submitted').

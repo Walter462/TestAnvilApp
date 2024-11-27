@@ -24,4 +24,3 @@ def add_feedack(name, email, feedback):
     email=email,
     feedback=feedback,
     created_on=datetime.now())
-  submit_button_click
