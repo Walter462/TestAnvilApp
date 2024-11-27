@@ -1,5 +1,6 @@
 from ._anvil_designer import Form1Template
 from anvil import *
+import anvil.users
 import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
@@ -10,7 +11,6 @@ class Form1(Form1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
     # Any code you write here will run before the form opens.
 
   def submit_button_click(self, **event_args):
@@ -19,5 +19,10 @@ class Form1(Form1Template):
     email = self.text_box_2.text
     feedback = self.text_box_3.text
     anvil.server.call('add_feedack', name, email, feedback)
-    #    alert('You clicked a submit button')
-    Notification('Feedback Submitted').
+    Notification('Feedback Submitted').show()
+    self.clear_user_inputs_after_submit()
+  
+  def clear_user_inputs_after_submit(self):
+    self.text_box_1.text =''
+    self.text_box_2.text =''
+    self.text_box_3.text =''

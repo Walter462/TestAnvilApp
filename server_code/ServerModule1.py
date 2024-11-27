@@ -1,3 +1,4 @@
+import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
@@ -23,4 +24,5 @@ def add_feedack(name, email, feedback):
     name=name,
     email=email,
     feedback=feedback,
-    created_on=datetime.now())
+    created_on=datetime.now()
+  )
