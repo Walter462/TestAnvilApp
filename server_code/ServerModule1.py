@@ -32,4 +32,5 @@ def add_feedack(name, email, feedback):
   #created third line
   #fourth line
   #fifth line
-  #sisth line
+  #sixth line
+  #seventh line
