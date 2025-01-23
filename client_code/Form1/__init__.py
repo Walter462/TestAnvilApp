@@ -1,5 +1,8 @@
 from ._anvil_designer import Form1Template
 from anvil import *
+import anvil.google.auth, anvil.google.drive
+from anvil.google.drive import app_files
+import anvil.facebook.auth
 import anvil.users
 import anvil.server
 import anvil.tables as tables
@@ -10,6 +13,7 @@ from anvil.tables import app_tables
 class Form1(Form1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    anvil.users.login_with_form()
     self.init_components(**properties)
     # Any code you write here will run before the form opens.
 
